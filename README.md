@@ -8,8 +8,11 @@ Helpy is a small tool designed for integrity and file checking inside [Autodesk 
 
 Inspired by the FNAF character "Helpy", the tool acts like a small guardian — keeping your files on track and error-free without interrupting your flow.
 
-![Helpy dancing](images/helpy-dance.gif)
-> "helpy dancing" - Scott cawthon
+<p align="center">
+  <img src="images/helpy-dance.gif" />
+  <p align="center"> "helpy dancing" - Scott cawthon </p>
+</p>
+
 
 ## Features
 - checklist presets
