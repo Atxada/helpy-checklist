@@ -70,7 +70,8 @@ class yourCustomProcedure(Procedure):
         super(yourCustomProcedure, self).__init__()
 ```
 
-remember that your procedure needs to have it's unique name, any duplicated names will result in one of the procedure being ignored. 
+> [!WARNING]
+> remember that your procedure needs to have it's unique name, any duplicated names will result in one of the procedure being ignored.
 
 **Available Decorators:**
 - `@checker`: The core logic for finding issues. It determines the UI state based on the return value:
