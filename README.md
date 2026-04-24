@@ -1,6 +1,6 @@
 # Helpy Checklist
 
-linkedin/video kalo bisa?
+[helpy_demo](https://github.com/user-attachments/assets/473ffb03-24b4-4746-be8b-7e9aa71ad4f7)
 
 ## Description
 
