@@ -41,7 +41,7 @@ currently, Helpy doesn't provide a UI for directly adding procedures or presets.
 
 By default this tool is equipped with 2 procedures and 1 presets, so right out of the box this tools is quite plain. So without further talking, here's how to add your own procedures or presets
 
-** Creating Presets**
+**Creating Presets**
 1. Navigate to the presets directory (`<install-dir>/helpy/presets`), this is the directory where you want to put your presets file
 2. Create a new `.json` file. the filename will be used as the preset's display name.
 3. Paste the following structure into your file:
