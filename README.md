@@ -41,7 +41,7 @@ currently this tools doesn't provide a UI way for user to add their own procedur
 
 By default this tool is equipped with 2 procedures and 1 presets, so right out of the box this tools is quite plain. So without further talking, here's how to add your own procedures or presets
 
-***presets***
+**Presets**
 1. Locate the presets inside the helpy folder (`<main>/helpy/presets`)
 2. You will likely see `general.json` , if you open inside you will see how the data stored
 3. You can use the same structure for your presets, create new JSON file with the name you want for your preset
@@ -52,7 +52,7 @@ By default this tool is equipped with 2 procedures and 1 presets, so right out o
 }
 ```
 
-**procedures**
+**Procedures**
 To create your own custom procedures you need to inherit from the Procedures class, this will automatically equip your class with all the method and attribute neccessary for the tools to recognized this as procedure. you can locate the procedures files here `<main>/helpy/procedure.py` if you want to review how it works
 
 this is the simplest form for custom procedure to be able to work
