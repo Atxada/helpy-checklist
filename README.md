@@ -56,7 +56,7 @@ By default this tool is equipped with 2 procedures and 1 presets, so right out o
 
 To create your custom procedures you must to inherit from the `Procedures` class, this will automatically equips your class with all the method and attributes that is neccessary for Helpy to recognized this as procedure. you can locate and review the procedures class here `<install-dir>/helpy/procedure.py` 
 
-this is the simplest form for custom procedure to be able to work
+this is the simplest form for custom procedure, without any functionality
 
 ```python
 # essential dependencies
@@ -82,7 +82,7 @@ class yourCustomProcedure(Procedure):
   - ⚠️ `ERROR` : Coding error or serious system issue. 	
   - 🟠 `CAUTION` : Finished, but requires a manual double-check. 
   - ➖ `SKIP` : Pre-conditions weren't met; procedure was skipped. 
-- `@helper`: Spawns a "Helper" option in the UI to automate fixes. Keep in mind that, helper will override selector if present :wrench:
+- `@helper`: Spawns a "Helper" option in the UI to automate fixes. Keep in mind that, helper will override selector if present
 - `@selector`: Logic that executes when the user clicks "Selector" in the UI.
 
 ---
