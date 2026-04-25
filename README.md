@@ -76,13 +76,13 @@ class yourCustomProcedure(Procedure):
 
 **Available Decorators:**
 - `@checker`: The core logic for finding issues. It determines the UI state based on the return value:
-  - `READY`: Initial state.
-  - `FINISHED`: Procedure completed successfully.
-  - `FAILED`: Procedure finished but found issues.
-  - `ERROR`: Coding error or serious system issue.
-  - `CAUTION`: Finished, but requires a manual double-check.
-  - `SKIP`: Pre-conditions weren't met; procedure was skipped.
-- `@helper`: Spawns a "Helper" option in the UI to automate fixes. Keep in mind that, helper will override selector if present
+  - ⚫ `READY` : Initial state. 
+  - ✔️ `FINISHED` : Procedure completed successfully. 
+  - ❌ `FAILED` : Procedure finished but found issues. 
+  - ⚠️ `ERROR` : Coding error or serious system issue. 	
+  - 🟠 `CAUTION` : Finished, but requires a manual double-check. 
+  - ➖ `SKIP` : Pre-conditions weren't met; procedure was skipped. 
+- `@helper`: Spawns a "Helper" option in the UI to automate fixes. Keep in mind that, helper will override selector if present :wrench:
 - `@selector`: Logic that executes when the user clicks "Selector" in the UI.
 
 ---
