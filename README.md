@@ -81,8 +81,8 @@ class yourCustomProcedure(Procedure):
   - `ERROR`: Coding error or serious system issue.
   - `CAUTION`: Finished, but requires a manual double-check.
   - `SKIP`: Pre-conditions weren't met; procedure was skipped.
+- `@helper`: Spawns a "Helper" option in the UI to automate fixes. Keep in mind that, helper will override selector if present
 - `@selector`: Logic that executes when the user clicks "Selector" in the UI.
-- `@helper`: Spawns a "Helper" option in the UI to automate fixes.
 
 ---
 
