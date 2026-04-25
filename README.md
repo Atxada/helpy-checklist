@@ -41,7 +41,7 @@ currently, Helpy doesn't provide a UI for directly adding procedures or presets.
 
 By default this tool is equipped with 2 procedures and 1 presets, so right out of the box this tools is quite plain. So without further talking, here's how to add your own procedures or presets
 
-**Creating Presets**
+#### **Creating Presets**
 1. Navigate to the presets directory (`<install-dir>/helpy/presets`), this is the directory where you want to put your presets file
 2. Create a new `.json` file. the filename will be used as the preset's display name.
 3. Paste the following structure into your file:
@@ -52,15 +52,16 @@ By default this tool is equipped with 2 procedures and 1 presets, so right out o
 }
 ```
 
-**Creating Procedures**\
-\
+#### **Creating Procedures**
+
 To create your custom procedures you must to inherit from the `Procedures` class, this will automatically equips your class with all the method and attributes that is neccessary for Helpy to recognized this as procedure. you can locate and review the procedures class here `<install-dir>/helpy/procedure.py` 
 
 this is the simplest form for custom procedure to be able to work
 
 ```python
-from ..procedure import Procedure
-from ..config import *
+# essential dependencies
+from ..procedure import Procedure  
+from ..config import *  
 
 @register_procedure()
 class yourCustomProcedure(Procedure):
@@ -70,7 +71,7 @@ class yourCustomProcedure(Procedure):
         super(yourCustomProcedure, self).__init__()
 ```
 
-> [!WARNING]
+> [!TIP]
 > remember that your procedure needs to have it's unique name, any duplicated names will result in one of the procedure being ignored.
 
 **Available Decorators:**
@@ -83,6 +84,36 @@ class yourCustomProcedure(Procedure):
   - `SKIP`: Pre-conditions weren't met; procedure was skipped.
 - `@helper`: Spawns a "Helper" option in the UI to automate fixes. Keep in mind that, helper will override selector if present
 - `@selector`: Logic that executes when the user clicks "Selector" in the UI.
+
+---
+> Scene Z Up procedure example
+
+```python
+from ..procedure import Procedure
+from ..config import *
+import maya.cmds as cmds
+
+@register_procedure(":out_holder.png")  # icon for procedure 
+class SceneZ_UpProcedure(Procedure):
+    NAME = "Scene Z Up"
+
+    def __init__(self):
+        super(SceneZ_UpProcedure, self).__init__()
+
+    @checker(0, "Scene up axis incorrect")  # (order, checker name)
+    def scene_up_axis_incorrect(self):
+        if cmds.upAxis(axis=True, q=True).lower() != "z":
+            return self.FAILED  # if reach here, means the procedure found issue
+        else:
+            return self.FINISHED # if reach here, means the procedure complete without issue
+        
+    @helper([0], "change up axis to Z", ":out_holder.png")  # (order that helper will attach to checker(it should be a list type and can attach to any available checker), helper name, icon)
+    def create_unreal_sets(self):
+        cmds.upAxis(axis="z", rv=True)
+        allCam= cmds.listCameras()  
+        for cam in allCam:
+            cmds.viewSet(cam, animate=True, home=True)
+```
 
 ---
 
