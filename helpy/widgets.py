@@ -492,10 +492,11 @@ class ProceduresWidgetItem(QtWidgets.QWidget):
             self.toggle_visibility(False)
     
     def toggle_visibility(self, show=True):
-        if self.procedure.selector_func:
-            self.select_icon.setVisible(show)
         if self.procedure.helper_func and self.procedure.checker_func:
             self.helper_icon.setVisible(show)
+            return
+        if self.procedure.selector_func:
+            self.select_icon.setVisible(show)
             
 class PresetNote(QtWidgets.QWidget):
     def __init__(self, preset_settings, note):
