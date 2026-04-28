@@ -60,7 +60,7 @@ class UnusedNodesProcedure(Procedure):
                         break
                 if not connected:
                     cmd = 'callbacks -executeCallbacks -hook "allConnectedShaders" "%s"'%shading_grp    # remember to use double tick as arguments in MEL
-                    custom_shaders = mel.eval(cmd)
+                    custom_shaders = mel.eval(cmd) or []
 
                     for shader in custom_shaders:
                         if shader != "":
