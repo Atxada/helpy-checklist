@@ -1,3 +1,6 @@
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![Autodesk Maya](https://img.shields.io/badge/Autodesk%20Maya-37A5CC?style=for-the-badge)
+
 # Helpy Checklist
 
 [helpy_demo](https://github.com/user-attachments/assets/473ffb03-24b4-4746-be8b-7e9aa71ad4f7)
